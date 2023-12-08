@@ -34,6 +34,7 @@ public class Ejemplo2 extends javax.swing.JFrame {
         btnVerificar = new javax.swing.JButton();
         lblCaracteresEspe = new javax.swing.JLabel();
         lblOracionAlR = new javax.swing.JLabel();
+        txtOracion = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,7 +45,7 @@ public class Ejemplo2 extends javax.swing.JFrame {
 
         lblOracion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblOracion.setForeground(new java.awt.Color(0, 0, 0));
-        lblOracion.setText("el dia de ayer Margarita Julia y Jorge salieron de excursion");
+        lblOracion.setText("Ingrese una oración:");
 
         btnVerificar.setBackground(new java.awt.Color(204, 204, 255));
         btnVerificar.setForeground(new java.awt.Color(0, 0, 0));
@@ -59,19 +60,19 @@ public class Ejemplo2 extends javax.swing.JFrame {
 
         lblOracionAlR.setForeground(new java.awt.Color(0, 0, 0));
 
+        txtOracion.setBackground(new java.awt.Color(255, 255, 255));
+        txtOracion.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(154, 154, 154)
                             .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(lblOracion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(lblCaracteresEspe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -80,7 +81,12 @@ public class Ejemplo2 extends javax.swing.JFrame {
                         .addComponent(lblOracionAlR, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(152, 152, 152)
-                        .addComponent(btnVerificar)))
+                        .addComponent(btnVerificar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblOracion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtOracion)))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -89,12 +95,14 @@ public class Ejemplo2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblTitulo)
                 .addGap(28, 28, 28)
-                .addComponent(lblOracion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblOracion)
+                    .addComponent(txtOracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(lblCaracteresEspe)
                 .addGap(40, 40, 40)
                 .addComponent(lblOracionAlR)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addComponent(btnVerificar)
                 .addGap(38, 38, 38))
         );
@@ -117,7 +125,7 @@ public class Ejemplo2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         int cont = 0;
         int contPalabras = 0;
-        String oracion = "el dia de ayer Margarita Julia y Jorge salieron de excursion";
+        String oracion = txtOracion.getText();
         String oracionAlReves = "";
         String oracionMod = "";
         for(int i = 0; i < oracion.length();i++){
@@ -194,5 +202,6 @@ public class Ejemplo2 extends javax.swing.JFrame {
     private javax.swing.JLabel lblOracion;
     private javax.swing.JLabel lblOracionAlR;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTextField txtOracion;
     // End of variables declaration//GEN-END:variables
 }
