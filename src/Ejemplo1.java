@@ -1,4 +1,5 @@
 
+
 import javax.swing.JOptionPane;
 
 /*
@@ -32,6 +33,7 @@ public class Ejemplo1 extends javax.swing.JFrame {
         lblTitulo = new javax.swing.JLabel();
         lblNombres = new javax.swing.JLabel();
         btnVerificar = new javax.swing.JButton();
+        txtOracion = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,7 +43,7 @@ public class Ejemplo1 extends javax.swing.JFrame {
         lblTitulo.setText("Espacios en Blanco");
 
         lblNombres.setForeground(new java.awt.Color(0, 0, 0));
-        lblNombres.setText("Juan Maria Pedro Luis");
+        lblNombres.setText("Ingrese una oración:");
 
         btnVerificar.setBackground(new java.awt.Color(255, 204, 204));
         btnVerificar.setForeground(new java.awt.Color(0, 0, 0));
@@ -49,6 +51,14 @@ public class Ejemplo1 extends javax.swing.JFrame {
         btnVerificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerificarActionPerformed(evt);
+            }
+        });
+
+        txtOracion.setBackground(new java.awt.Color(255, 255, 255));
+        txtOracion.setForeground(new java.awt.Color(0, 0, 0));
+        txtOracion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtOracionActionPerformed(evt);
             }
         });
 
@@ -60,13 +70,16 @@ public class Ejemplo1 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(76, 76, 76)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNombres, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTitulo)))
+                        .addComponent(lblTitulo))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(99, 99, 99)
-                        .addComponent(btnVerificar)))
-                .addContainerGap(72, Short.MAX_VALUE))
+                        .addComponent(btnVerificar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblNombres)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtOracion, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,10 +87,12 @@ public class Ejemplo1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblTitulo)
                 .addGap(18, 18, 18)
-                .addComponent(lblNombres)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombres)
+                    .addComponent(txtOracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnVerificar)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -97,7 +112,7 @@ public class Ejemplo1 extends javax.swing.JFrame {
     private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
         // TODO add your handling code here:
          int cont = 0;
-    String nombres = "Juan Maria Pedro Luis";
+    String nombres = txtOracion.getText();
     
     for (int i = 0; i < nombres.length(); i++) {
         if (nombres.charAt(i) == ' ') {
@@ -107,6 +122,10 @@ public class Ejemplo1 extends javax.swing.JFrame {
      JOptionPane.showMessageDialog(this, "Cantidad de espacios: " + cont, "Resultado", JOptionPane.INFORMATION_MESSAGE);
 
     }//GEN-LAST:event_btnVerificarActionPerformed
+
+    private void txtOracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOracionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtOracionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,5 +167,6 @@ public class Ejemplo1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblNombres;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTextField txtOracion;
     // End of variables declaration//GEN-END:variables
 }
